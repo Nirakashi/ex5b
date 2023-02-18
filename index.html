@@ -12,7 +12,7 @@
     <div class="container-fluid">
 		<h1>Temperature conversion</h1>
 		<img src="images/temperature.gif" class="img-fluid" alt="runner logo" width="150" height="150"><br>
-		<hr></hr>
+		<hr> 
 		<form role="form" method="GET">
 		  <div class="form-group">
 			<label for="tem">Current temperature:</label>
@@ -37,7 +37,7 @@
 			$("button").click(function(){
 			   var t = $('#temp').val();//celsius
 			   var u = $('#unit').val();
-			   
+			   function validation(t){
 			   if(isNaN(t)){
 					msg = "Please verify whether the temperature value is correct!!!";
 					alert(msg);
@@ -48,7 +48,9 @@
 					alert(msg);
 					return;
 			   }
-			   
+				}
+				var chk = validation(t);
+				if(chk != null ) return chk ;
 			   var t1;
 			   var u1;
 			   
